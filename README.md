@@ -44,3 +44,4 @@ App.controller('MyCtrl', function(){
 
 * Expressions are evaluated inside the `on-finish=""`, so you cannot use `$scope`  variables there
 * There are no modifications on the original `$scope`, it's the exact same `$scope` that you have inside your `ng-repeat` directive (same IDs, variables, etc)
+* If you decide to set a variable in there, you must know that it won't be "useful" at the current `$digest` cycle, since it executes 0ms after the loop is done (`$timeout` with 3rd parameter set to `FALSE`). So the best way is just to use a `$scope` function and if you need any `$apply` there, you can do so.
