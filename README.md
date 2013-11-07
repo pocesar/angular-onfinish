@@ -13,7 +13,7 @@ var yourapp = angular.module('yourapp', ['onfinish']);
 
 #### In your HTML, set the `on-finish` attribute:
 
-```js
+```html
 <li ng-repeat="item in list" on-finish="finished()"></li>
 <li ng-repeat="item in items" on-finish="done=true"></li>
 ```
