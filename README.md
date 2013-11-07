@@ -5,20 +5,20 @@ Directives that execute a function or an expression when ng-repeat is done with 
 
 ## Usage
 
-1. Include it in your app:
+#### Include it in your app:
 
 ```js
 var yourapp = angular.module('yourapp', ['onfinish']);
 ```
 
-2. In your HTML, set the `on-finish` attribute:
+#### In your HTML, set the `on-finish` attribute:
 
 ```js
 <li ng-repeat="item in list" on-finish="finished()"></li>
 <li ng-repeat="item in items" on-finish="done=true"></li>
 ```
 
-3. Make sure your scope has the variables / functions:
+#### Make sure your scope has the variables / functions:
 
 ```js
 App.controller('MyCtrl', function(){
@@ -38,5 +38,9 @@ App.controller('MyCtrl', function(){
 });
 ```
 
-4. Have fun
+#### Have fun
 
+## Notes
+
+* Expressions are evaluated inside the `on-finish=""`, so you cannot use `$scope`  variables there
+* There are no modifications on the original `$scope`, it's the exact same `$scope` that you have inside your `ng-repeat` directive (same IDs, variables, etc)
